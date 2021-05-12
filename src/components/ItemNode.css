@@ -1,0 +1,23 @@
+.Item-node-key {
+    display: inline-block;
+}
+
+.Item-node-value {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: var(--small-radius);
+}
+
+.Item-node-string .Item-node-value {
+    color: #00c110;
+}
+.Item-node-string .Item-node-value:hover {
+    background-color: #cfffdd;
+}
+
+.Item-node-number .Item-node-value {
+    color: #d86f00;
+}
+.Item-node-number .Item-node-value:hover {
+    background-color: #ffdecf;
+}

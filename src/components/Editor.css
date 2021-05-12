@@ -1,0 +1,33 @@
+[data-level]:not([data-level="0"]) {
+    margin-left: 26px;
+}
+
+.Editor {
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    grid-gap: 15px;
+    min-height: 100%;
+    padding: 30px;
+    line-height: 21px;
+}
+
+.Editor-viewer {
+    display: flex;
+    background: #fff;
+    border-radius: var(--small-radius);
+}
+
+.Editor-viewer-data {
+    margin-left: 5px;
+}
+
+.Editor-viewer-lines {
+    padding: 0 5px;
+    font-size: 14px;
+    color: #848484;
+    font-weight: 700;
+    text-align: right;
+    background-color: #e8e8e8;
+    border-top-left-radius: var(--small-radius);
+    border-bottom-left-radius: var(--small-radius);
+}
