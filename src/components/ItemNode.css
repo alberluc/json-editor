@@ -1,23 +1,29 @@
-.Item-node-key {
-    display: inline-block;
+.ItemNode {
+    display: flex;
 }
 
-.Item-node-value {
+.ItemNode-key {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.ItemNode-value {
     cursor: pointer;
     display: inline-block;
     border-radius: var(--small-radius);
+    margin-left: 4px;
 }
 
-.Item-node-string .Item-node-value {
+.ItemNode-string .ItemNode-value {
     color: #00c110;
 }
-.Item-node-string .Item-node-value:hover {
+.ItemNode-string .ItemNode-value:hover {
     background-color: #cfffdd;
 }
 
-.Item-node-number .Item-node-value {
+.ItemNode-number .ItemNode-value {
     color: #d86f00;
 }
-.Item-node-number .Item-node-value:hover {
+.ItemNode-number .ItemNode-value:hover {
     background-color: #ffdecf;
 }

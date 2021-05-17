@@ -2,7 +2,8 @@ import {createContext, useReducer} from 'react'
 
 const initialState = {
   currentItemId: null,
-  schema: null
+  schema: null,
+  linesHeight: {}
 }
 
 const reducer = (state, action) => {
@@ -24,6 +25,12 @@ const reducer = (state, action) => {
           ...state,
           currentItemId: action.payload.itemId
         }
+      }
+    }
+    case 'SET_LINE_HEIGHT': {
+      return {
+        ...state,
+        linesHeight: {...state.linesHeight, [action.payload.lineNumber]: action.payload.height}
       }
     }
     default: {

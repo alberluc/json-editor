@@ -15,7 +15,7 @@ import {GlobalContext} from '../contexts/globalContext'
 const Editor = (props) => {
   const {state, dispatch} = useContext(GlobalContext)
 
-  const createSchema = (data, level = 0, lastNode = true, linesCount = 0) => {
+  const createSchema = (data, level = 0, lastNode = true, linesCount = [0]) => {
     let node = {
       level,
       lastNode,
@@ -31,11 +31,10 @@ const Editor = (props) => {
       for (let i = 0; i < data.length; i++) {
         const item = data[i]
         const isLastNode = i === data.length - 1
-        const {node: n, linesCount: l} = createSchema(item, level + 1, isLastNode)
+        const {node: n} = createSchema(item, level + 1, isLastNode, linesCount)
         node.value.push(n)
-        linesCount += l
       }
-      linesCount += 2
+      linesCount[0] += 2
     } else if (typeof data === 'object') {
       node = {
         ...node,
@@ -46,24 +45,24 @@ const Editor = (props) => {
       for (let i = 0; i < keys.length; i++) {
         const item = data[keys[i]]
         const isLastNode = i === keys.length - 1
-        const {node: n, linesCount: l} = createSchema(item, level + 1, isLastNode)
+        const {node: n} = createSchema(item, level + 1, isLastNode, linesCount)
         node.value.push({
           name: keys[i],
           ...n
         })
-        linesCount += l
       }
-      linesCount += 2
+      linesCount[0] += 2
     } else {
+      linesCount[0]++
       node = {
         ...node,
+        lineNumber: linesCount[0],
         type: typeof data,
         value: data
       }
-      linesCount++
     }
 
-    return {node, linesCount}
+    return {node, linesCount: linesCount[0]}
   }
 
   const render = (data) => {
@@ -93,9 +92,12 @@ const Editor = (props) => {
     <div className="Editor">
       <div className="Editor-viewer">
         <div className="Editor-viewer-lines">
-          {Array.from({length: state.schema.linesCount}, (v, k) => k).map(lineNumber => (
-            <div key={lineNumber}>{lineNumber}</div>
-          ))}
+          {Array.from({length: state.schema.linesCount}, (v, k) => k).map(lineNumber => {
+            const height = state.linesHeight[lineNumber - 1]
+            return (
+              <div key={lineNumber} style={{height}}>{lineNumber}</div>
+            );
+          })}
         </div>
         <div className="Editor-viewer-data">
           {render(state.schema.node)}
