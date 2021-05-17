@@ -29,10 +29,10 @@ const ItemNode = (props) => {
         {data.type === 'string' && '"'}
         <span>{data.value}</span>
         {data.type === 'string' && '"'}
+        {!data.lastNode && (
+          <span className="ItemNode-separator">,</span>
+        )}
       </div>
-      {!data.lastNode && (
-        <span>,</span>
-      )}
     </div>
   )
 }

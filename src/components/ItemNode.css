@@ -27,3 +27,7 @@
 .ItemNode-number .ItemNode-value:hover {
     background-color: #ffdecf;
 }
+
+.ItemNode-separator {
+    color: #333333;
+}

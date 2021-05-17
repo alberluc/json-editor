@@ -43,7 +43,7 @@ const Editor = (props) => {
     <div className="Editor">
       <div className="Editor-viewer">
         <div className="Editor-viewer-lines">
-          {Array.from({length: state.schema.linesCount}, (v, k) => k).map(lineNumber => {
+          {Array.from({length: state.schema.linesCount}).map((_, lineNumber) => {
             const height = state.linesHeight[lineNumber - 1]
             return (
               <div key={lineNumber} style={{height}}>{lineNumber}</div>
