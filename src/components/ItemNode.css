@@ -4,7 +4,10 @@
 
 .ItemNode-key {
     display: inline-block;
-    margin-right: 4px;
+    margin-right: 3px;
+}
+.ItemNode-key + span {
+    margin-right: 6px;
 }
 
 .ItemNode-value {
@@ -12,12 +15,14 @@
     display: inline-block;
     border-radius: var(--small-radius);
     margin-left: 4px;
+    word-break: break-word;
 }
 
 .ItemNode-string .ItemNode-value {
     color: #00c110;
 }
-.ItemNode-string .ItemNode-value:hover {
+.ItemNode-string .ItemNode-value:hover,
+.ItemNode-string[data-selected="true"] .ItemNode-value {
     background-color: #cfffdd;
 }
 

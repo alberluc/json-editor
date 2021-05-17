@@ -15,17 +15,10 @@ const reducer = (state, action) => {
         schema: action.payload.schema
       }
     }
-    case 'TOGGLE_ITEM': {
-      if (state.currentItemId === action.payload.itemId) {
-        return {
-          ...state,
-          currentItemId: null
-        }
-      } else {
-        return {
-          ...state,
-          currentItemId: action.payload.itemId
-        }
+    case 'SET_CURRENT_ITEM': {
+      return {
+        ...state,
+        currentItemId: action.payload.itemId
       }
     }
     case 'SET_LINE_HEIGHT': {

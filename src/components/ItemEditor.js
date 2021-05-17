@@ -16,7 +16,7 @@ const ItemEditor = (props) => {
     dispatch({type: 'SET_NODE_VALUE', payload: {id: currentNode.id, value}})
   }
 
-  return !!currentNode && (
+  return (
     <div className="ItemEditor">
       <textarea className="ItemEditor-textarea" value={brToNl(currentNode.value)} onChange={onTextAreaChange}/>
     </div>

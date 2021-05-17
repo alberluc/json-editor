@@ -6,7 +6,7 @@ function PropertyName(props) {
         <span>{props.name}</span>
         <span>"</span>
       </div>
-      <span> : </span>
+      <span>:</span>
     </>
   )
 }

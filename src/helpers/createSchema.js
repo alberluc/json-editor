@@ -14,6 +14,7 @@ const createSchema = (data, level = 0, lastNode = true, linesCount = [0]) => {
   }
 
   if (Array.isArray(data)) {
+    linesCount[0] += 1
     node = {
       ...node,
       type: 'Array',
@@ -25,8 +26,9 @@ const createSchema = (data, level = 0, lastNode = true, linesCount = [0]) => {
       const {node: n} = createSchema(item, level + 1, isLastNode, linesCount)
       node.value.push(n)
     }
-    linesCount[0] += 2
+    linesCount[0] += 1
   } else if (typeof data === 'object') {
+    linesCount[0] += 1
     node = {
       ...node,
       type: 'Object',
@@ -42,7 +44,7 @@ const createSchema = (data, level = 0, lastNode = true, linesCount = [0]) => {
         ...n
       })
     }
-    linesCount[0] += 2
+    linesCount[0] += 1
   } else {
     linesCount[0]++
     node = {

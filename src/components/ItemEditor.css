@@ -1,3 +1,8 @@
+.ItemEditor {
+    padding: 30px;
+    height: 100%;
+}
+
 .ItemEditor-textarea {
     border: none;
     width: 100%;

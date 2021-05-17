@@ -1,0 +1,26 @@
+.Viewer-wrapper {
+    padding: 30px;
+    height: 100%;
+}
+
+.Viewer {
+    display: flex;
+    background: #fff;
+    border-radius: var(--small-radius);
+    height: 100%;
+}
+
+.Viewer-data {
+    margin-left: 5px;
+}
+
+.Viewer-lines {
+    padding: 0 5px;
+    font-size: 14px;
+    color: #848484;
+    font-weight: 700;
+    text-align: right;
+    background-color: #e8e8e8;
+    border-top-left-radius: var(--small-radius);
+    border-bottom-left-radius: var(--small-radius);
+}
