@@ -1,4 +1,5 @@
 import {createContext, useReducer} from 'react'
+import updateNodeByID from "../helpers/updateNodeByID";
 
 const initialState = {
   currentItemId: null,
@@ -31,6 +32,15 @@ const reducer = (state, action) => {
       return {
         ...state,
         linesHeight: {...state.linesHeight, [action.payload.lineNumber]: action.payload.height}
+      }
+    }
+    case 'SET_NODE_VALUE': {
+      const schema = updateNodeByID(state.schema, action.payload.id, {
+        value: action.payload.value
+      })
+      return {
+        ...state,
+        schema
       }
     }
     default: {
