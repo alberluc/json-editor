@@ -1,3 +1,11 @@
+/**
+ * Parse a json object to create a schema with nodes entities
+ * @param data Original json object
+ * @param level Level of node in tree
+ * @param lastNode Is the last node or not ?
+ * @param linesCount Line number associated to the node
+ * @returns {{node: ({level: number, lastNode: boolean, id: number, lineNumber: number, type: ("undefined"|"object"|"boolean"|"number"|"string"|"function"|"symbol"|"bigint"), value}|{level: number, lastNode: boolean, id: number, type: string, value: *[]}|{level: number, lastNode: boolean, id: number, type: string, value: *[]}), linesCount: number}}
+ */
 const createSchema = (data, level = 0, lastNode = true, linesCount = [0]) => {
   let node = {
     level,

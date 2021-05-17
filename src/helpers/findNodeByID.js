@@ -1,3 +1,9 @@
+/**
+ * Find and return a node by its identifier
+ * @param node
+ * @param id
+ * @returns {null|*}
+ */
 const findNodeByID = (node, id) => {
   if (node.id === id) return node
   else {
