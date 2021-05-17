@@ -1,6 +1,7 @@
 import './ItemNode.css'
 import {GlobalContext} from '../contexts/globalContext'
 import {useContext, useEffect, useRef} from 'react'
+import PropertyName from "./PropertyName";
 
 const ItemNode = (props) => {
   const {data} = props
@@ -19,12 +20,7 @@ const ItemNode = (props) => {
 
   return (
     <div ref={elRef} data-level={data.level} className={`ItemNode ItemNode-${data.type}`}>
-      <div className={`ItemNode-key`}>
-        <span>"</span>
-        <span>{data.name}</span>
-        <span>"</span>
-      </div>
-      <span> : </span>
+      {data.name && <PropertyName name={data.name}/>}
       <div className={`ItemNode-value`} onClick={onSelectValue}>
         {data.type === 'string' && '"'}
         <span>{data.value}</span>

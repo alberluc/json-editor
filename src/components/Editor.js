@@ -36,6 +36,7 @@ const Editor = (props) => {
 
   useEffect(() => {
     const schema = createSchema(props.data)
+    console.log(schema)
     dispatch({type: 'ADD_SCHEMA', payload: {schema}})
   }, [])
 

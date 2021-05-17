@@ -1,14 +1,14 @@
-[
-  {
-    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aliquam sed ligula vitae elit finibus pellentesque non varius magna.<br>Pellentesque mattis sapien sed tortor vehicula dignissim.",
-    "age": 22
-  },
-  {
-    "name": "Julia",
-    "age": 19
-  },
-  {
-    "name": "Emilien",
-    "age": 25
+{
+  "trads": {
+    "main": {
+      "title": "My first title",
+      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aliquam sed ligula vitae elit finibus pellentesque non varius magna.<br>Pellentesque mattis sapien sed tortor vehicula dignissim."
+    },
+    "footer": {
+      "links": [
+        "First link",
+        "Second link"
+      ]
+    }
   }
-]
+}
