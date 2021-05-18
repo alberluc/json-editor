@@ -1,0 +1,24 @@
+.EditorMode {
+    display: flex;
+    padding: 30px 30px 0 30px;
+    color: #fff;
+}
+
+.EditorMode-mode-wrapper {
+    margin-left: 5px;
+}
+
+.EditorMode-mode {
+    margin-left: 10px;
+    padding: 3px 11px;
+    font-size: 13px;
+    border: none;
+    border-radius: var(--small-radius);
+    cursor: pointer;
+    background: #fff;
+}
+
+.EditorMode-mode[data-selected="true"] {
+    color: #00c110;
+    background: #cfffdd;
+}

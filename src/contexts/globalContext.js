@@ -4,7 +4,8 @@ import updateNodeByID from "../helpers/updateNodeByID";
 const initialState = {
   currentItemId: null,
   schema: null,
-  linesHeight: {}
+  linesHeight: {},
+  mode: 'EDITOR'
 }
 
 const reducer = (state, action) => {
@@ -34,6 +35,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         schema
+      }
+    }
+    case 'SELECT_MODE': {
+      return {
+        ...state,
+        mode: action.payload.mode
       }
     }
     default: {

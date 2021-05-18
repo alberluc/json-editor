@@ -5,6 +5,8 @@ import ItemEditor from './ItemEditor'
 import {GlobalContext} from '../contexts/globalContext'
 import createSchema from "../helpers/createSchema";
 import Viewer from "./Viewer";
+import EditorMode from "./EditorMode";
+import FreeEditor from "./FreeEditor";
 
 /**
  * Build Json Editor
@@ -22,14 +24,18 @@ const Editor = (props) => {
 
   return state.schema && (
     <div className="Editor">
-      {!state.currentItemId ? (
-        <Viewer/>
-      ) : (
-        <SplitPane split="vertical" defaultSize={800} minSize={500}>
-          <Viewer/>
-          <ItemEditor/>
-        </SplitPane>
-      )}
+      <EditorMode/>
+      <main className="Editor-main">
+        {state.mode === "EDITOR" && (
+          <SplitPane className="Editor-split" split="vertical" defaultSize={800} minSize={500}>
+            <Viewer/>
+            <ItemEditor/>
+          </SplitPane>
+        )}
+        {state.mode === "FREE" && (
+          <FreeEditor/>
+        )}
+      </main>
     </div>
   )
 }

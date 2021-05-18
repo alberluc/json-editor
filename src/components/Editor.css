@@ -25,11 +25,24 @@
 }
 
 .Editor {
-    /* display: grid;
-    grid-template-columns: 600px 1fr;
-    grid-gap: 15px; */
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     line-height: 21px;
+}
+
+.Editor-main {
+    padding: 30px;
+    position: relative;
+    flex: 1;
+}
+
+.Editor-split {
+    top: 30px !important;
+    bottom: 30px !important;
+    left: 30px !important;
+    right: 30px !important;
+    height: auto !important;
 }
 
 .Resizer {
@@ -49,26 +62,13 @@
     transition: all 2s ease;
 }
 
-.Resizer.horizontal {
-    height: 11px;
-    margin: -5px 0;
-    border-top: 5px solid rgba(255, 255, 255, 0);
-    border-bottom: 5px solid rgba(255, 255, 255, 0);
-    cursor: row-resize;
-    width: 100%;
-}
-
-.Resizer.horizontal:hover {
-    border-top: 5px solid rgba(0, 0, 0, 0.5);
-    border-bottom: 5px solid rgba(0, 0, 0, 0.5);
-}
-
 .Resizer.vertical {
     width: 11px;
-    margin: 0 -5px;
+    margin: auto -5px;
     border-left: 5px solid rgba(255, 255, 255, 0);
     border-right: 5px solid rgba(255, 255, 255, 0);
     cursor: col-resize;
+    height: 70%;
 }
 
 .Resizer.vertical:hover {

@@ -1,6 +1,13 @@
 .ItemEditor {
-    padding: 30px;
     height: 100%;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: var(--small-radius);
+}
+
+.ItemEditor-wrapper {
+    height: 100%;
+    padding-left: 15px;
 }
 
 .ItemEditor-textarea {
@@ -8,6 +15,9 @@
     width: 100%;
     height: 100%;
     border-radius: var(--small-radius);
-    padding: 5px;
     line-height: 1.5;
+}
+
+.ItemEditor-textarea:focus {
+    outline: none;
 }

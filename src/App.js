@@ -1,8 +1,8 @@
 import profiles from './data/profiles.json'
-import Editor from './components/Editor'
+import JsonEditor from './components/Editor'
 
 const App = () => {
-  return <Editor data={profiles}/>
+  return <JsonEditor data={profiles}/>
 }
 
 export default App
