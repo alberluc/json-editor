@@ -11,6 +11,7 @@
 }
 
 .ItemEditor-textarea {
+    display: inline-block;
     border: none;
     width: 100%;
     height: 100%;
@@ -20,4 +21,16 @@
 
 .ItemEditor-textarea:focus {
     outline: none;
+}
+
+.ItemEditor-header {
+    margin-bottom: 7px;
+}
+
+.ItemEditor-style {
+    border: none;
+    margin-right: 4px;
+    padding: 3px 5px;
+    border-radius: var(--small-radius);
+    cursor: pointer;
 }
